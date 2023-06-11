@@ -11,6 +11,7 @@ import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -54,7 +55,7 @@ public class Student {
 			)
 	private List<Subject>subjectList;
 	
-	@ManyToMany(mappedBy = "studentList")
+	@ManyToMany(mappedBy = "studentList",cascade = CascadeType.ALL)
 	private List<Project>projectList;
 	
 	@Transient
