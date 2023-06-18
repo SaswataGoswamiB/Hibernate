@@ -1,5 +1,7 @@
 package com.Hibernate.Entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,7 +17,8 @@ public class Address {
 	private String districtString;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GenericGenerator(name="PinCod_id",strategy = "com.Hibernate.CustomIdGenerator.CustomId")
+	@GeneratedValue(generator ="PinCod_id" )
 	private int pincode;
 
 	public Address() {
