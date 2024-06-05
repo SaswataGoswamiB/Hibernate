@@ -47,6 +47,8 @@ public class HqlExample {
 		
 		// Student student= aQuery.list().stream().findFirst().get();
 		
+		aQuery.setMaxResults(10);
+		
 		//For List of Students.
 		List<Student>aliuStudents=aQuery.list();
 		

@@ -18,7 +18,7 @@ public class Address {
 
 	@Id
 	@GenericGenerator(name="PinCod_id",strategy = "com.Hibernate.CustomIdGenerator.CustomId")
-	@GeneratedValue(generator ="PinCod_id" )
+	@GeneratedValue(generator ="PinCod_id")
 	private int pincode;
 
 	public Address() {

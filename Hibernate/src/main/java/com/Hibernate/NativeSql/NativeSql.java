@@ -17,7 +17,7 @@ public class NativeSql {
 		Session session = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory().openSession();
 		Transaction txTransaction = session.beginTransaction();
 
-		String queryString = "select * from Studnets";
+		String queryString = " from Studnets";
 
 		NativeQuery nativeQuery = (NativeQuery) session.createQuery(queryString);
 

@@ -31,7 +31,7 @@ public class Student {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
-	@Column(name = "Name")
+
 	@Embedded
 	@AttributeOverrides({
 		@AttributeOverride(name="firstNameString",column =@Column(name="First_Name")),
@@ -50,7 +50,7 @@ public class Student {
 	@OneToMany()
 	@JoinTable(
 					name = "Student_sibject",
-					joinColumns = {@JoinColumn(name="StudentId")},
+					joinColumns = @JoinColumn(name="StudentId"),
 					inverseJoinColumns = {@JoinColumn(name="Subject_id")}
 			)
 	private List<Subject>subjectList;
